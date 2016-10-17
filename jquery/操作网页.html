@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery操作网页</title>
+	<!-- <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.0.min.js"></script> -->
+	<script type="text/javascript" >
+		if (typeof jQuery == 'undefined') {
+        document.write(decodeURI("%3Cscript src='jquery-3.1.0.min.js' type='text/javascript'%3E%3C/script%3E"));
+    }
+	</script>
+	<script type="text/javascript" src="js_test/test.js"></script>
+	<style type="text/css">
+		.showList{
+			float:left;
+			margin:10px;
+		}
+		#black{
+			width:2px;
+			height:2px;
+			background-color: green;
+		}
+	</style>
+</head>
+<body>
+	<div class="showList">
+		<button type="button" id="btn_show">显示</button>
+		<button type="button" id="btn_hide">隐藏</button>
+		<h2 id="header">jquery网页操作示例</h2>
+	</div>
+	<div class="showList">
+		<button id="btn_toggle" type="button">显示/隐藏:</button>
+		<h3>toggle切换显示或隐藏</h3>
+	</div>
+	<div class="showList">
+		<input type="button" name="fadeIn" id="fadeIn" value="淡入">
+		<input type="button" name="fadeOut" id="fadeOut" value="淡出">
+		<input type="button" name="fadeOutIn" id="fadeOutIn" value="淡入/淡出">
+		<input type="button" name="slideUp" id="slideUp" value="slideUp">
+		<input type="button" name="slideDown" id="slideDown" value="slideDown">
+		<br/>
+		<img id="woman" width="200px" height="200px" src="img/woman.jpg">
+	</div>
+	<div class="showList">
+		<input type="button" name="donghua" id="donghua" value="动画">
+		<br>
+		<div id="black"></div>
+	</div>
+	<div class="showList">
+		<h2>阻止文本换行</h2>
+		<form id="form" name="form" method="post" action="#">
+			<label>文本输入</label><br>
+			<p>
+				<textarea name="input" cols="30" rows="3" id="input"></textarea>
+			</p>
+			<label>阻止换行后结果</label>
+			<p>
+				<textarea name="output" cols="30" rows="1" id="output" readonly="readonly"></textarea><br>
+			</p>
+			<label>
+				<input type="button" name="submit" value="阻止换行" id="btn_submit">
+			</label>
+		</form>
+	</div>
+</body>
+</html>

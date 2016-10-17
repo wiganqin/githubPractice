@@ -512,7 +512,7 @@
             username = usernameInput.value.trim();
             pwd = pwdInput.value.trim();
             if(!username || !pwd) {
-                alert('请完整填写！');
+                alert('请完整填写用户名和密码！');
             }
             else {
                 ajaxOnsuccess = function(xhr){
