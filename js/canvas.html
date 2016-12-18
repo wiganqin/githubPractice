@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas</title>
+	<style type="text/css">
+		#can{
+			border:1px dashed red;
+			/*width:1000px;
+			height:200px;*/
+		}
+	</style>
+</head>
+<body>
+<canvas id="can"></canvas>
+	<script type="text/javascript">
+		
+		function f(){
+			var can = document.getElementById("can");
+			var cantext = can.getContext("2d");
+			// cantext.save();
+
+			// cantext.translate(50,0);
+			cantext.beginPath();
+			cantext.moveTo(0,0);
+			cantext.lineTo(250,150);
+			cantext.moveTo(150,50);
+			// cantext.lineTo(150,50);
+			var p1 = {
+			        x : 200,
+			        y : 50
+			    };
+			    //端点2
+			    var p2 = {
+			        x : 200,
+			        y : 100       
+			    };
+			cantext.arcTo(200,50,200,100,50);
+			cantext.moveTo(200,100);
+			cantext.arcTo(200,150,150,150,50);
+			cantext.moveTo(150,150);
+			cantext.arcTo(100,150,100,100,50);
+			cantext.moveTo(100,100);
+			cantext.arcTo(100,50,150,50,50);
+
+			cantext.moveTo(100,50);
+			cantext.arc(50,50,50,Math.PI*2,false); 
+			cantext.lineWidth = 2;
+
+			cantext.lineJoin = "round";
+			cantext.strokeStyle = "#F7E422";
+
+			cantext.stroke();
+			// cantext.restore();
+			console.log("ss");
+		}
+		f();
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>盒模型</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+		}
+		.parent{
+			width:500px;
+			height:500px;
+			margin-top:30px;
+			background-color:blue;
+			/*float:left;*/
+		}
+		.son1{
+			width:400px;
+			height:400px;
+			margin-top:20px;
+			margin-bottom:20px;
+			background-color:green;
+		}
+		.son2{
+			margin-top:20px;
+			background-color: black;
+			margin-bottom:20px;
+		}
+		.parent1{
+			/*clear:both;*/
+			position:relative;
+			width:1000px;
+			height:600px;
+			border:2px solid red;
+			padding:20px;
+			background:url(images/dog.jpg),url(images/sunwukong.jpg),url(images/shizi.jpg);
+			background-repeat:no-repeat;
+			background-position:30px 50%;
+		}
+		.parent1 h2{
+			
+		}
+		/*.txt{
+			float:right;
+			position:absolute;
+			right:10px;
+		}*/
+		/*#sun{
+			width:100px;
+			height:100px;
+			float:right;
+		}*/
+		/*.clear:after{
+			content:".";
+			height:0;
+			visibility:hidden;
+			display:none;
+			clear:both;
+		}*/
+	</style>
+</head>
+<body>
+	<!-- <div class="parent">
+		<div class="son1"></div>
+		<div class="son2"></div>
+		<div class="son3"></div>
+	</div> -->
+	<div class="parent1 clear">
+		<h2>hhhhhhddddddddddddddddddddddddddddddddd</h2>
+		<p class="txt">11、贝多芬拼搏成长 大作曲家贝多芬小时候由于家庭贫困没能上学，十七岁时患了伤寒和天花之后，肺病、关节炎、黄热病、结膜炎等又接踵而至，二十六岁不幸失去了听觉，爱情上也屡遭挫折，在这种境遇下，贝多芬发誓“要扼住命运的咽喉”。在与命运的顽强拼搏中，他的意志占了上风，在乐曲创作事业上，他的生命之火燃烧得越来越旺盛了。
+12、司马迁写《史记》 汉朝司马迁继承父业，立志著述史书。他游历各地，阅读了大量书籍。不料正在他着手编写《史记》时，遭到了李陵之祸的株连。但他矢志不渝，忍辱负重，身受腐刑，幽而发愤，经过十余年的艰苦奋斗，终于写成了鸿篇巨著——《史记》</p>
+		<!-- <img src="images/shizi.jpg" id="sun"> -->
+		<!-- <div class="clear"></div> -->
+	</div>
+</body>
+</html>

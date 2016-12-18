@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="content-type">
+<meta content="initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width" name="viewport">、
+<title>目录</title>
+<link rel="stylesheet" type="text/css" href="jquery/bootstrap.css">
+<!-- <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.0.min.js"></script> -->
+<script type="text/javascript" >
+		if (typeof jQuery == 'undefined') {
+        document.write(decodeURI("%3Cscript src='jquery/jquery-3.1.0.min.js' type='text/javascript'%3E%3C/script%3E"));
+    }
+</script>
+<script type="text/javascript" src="jquery/bootstrap.min.js"></script>
+	<style type="text/css"> 
+		.info{
+			width:100%;
+			text-align:center;
+			margin-top:100px;
+			padding-top:30px;
+			border-top:3px double gray;
+		}
+		.panel:hover{
+			cursor:pointer;
+			background-color:#61F337;
+		}
+		.title-info{
+			font-family:KaiTi;
+			margin-bottom:40px;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			$(".panel-body").click(function(event){
+				
+				window.open($(this).children("a")[0],"_blank");
+				
+			});
+
+			$("a").click(function(e){
+				//点击a链接，外层div点击事件返回false,防止弹出两窗口,或停止事件在DOM层次中的传播。
+					
+				// $(".panel-body").click(function(){
+				// 	return false;
+				// });	
+				e.stopPropagation();
+												
+				});
+						
+			
+		});
+	</script>
+</head>
+<body>
+
+<div class="container">
+	<div class="title-info"><h1>目录：</h1></div>
+	
+	<div class="row">
+		<div class="col-lg-3">
+			<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="./baidu/task1.html" target="_blank">任务一：零基础HTML编码</a>
+			</div>
+			</div>
+		</div>
+
+		<div class="col-lg-3">
+			<div class="panel panel-success">
+			<div class="panel-body">
+				<!-- <a href="./163edu/edu.html" target="_blank">微专业：网易教育产品(html,css,js)</a> -->
+			</div>
+			</div>
+		</div>
+
+		<div class="col-lg-3">
+			<div class="panel panel-default">
+			<div class="panel-body">
+				<!-- <a href="./dianshang/index.html" target="_blank">电商首页模仿练习(jquery)</a> -->
+			</div>
+			</div>
+		</div>
+
+		<div class="col-lg-3">
+			<div class="panel panel-default">
+			<div class="panel-body">
+				<!-- <a href="./littleex/jspubu/index.html" target="_blank">js瀑布流</a> -->
+			</div>
+			</div>
+		</div>
+	    
+    </div>
+
+    
+	
+
+</div>
+
+</body>
+</html>

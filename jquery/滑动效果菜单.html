@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>滑动效果菜单</title>
+	<script src="jquery-3.1.0.min.js"></script>
+	<style type="text/css">
+		body{
+			font-size:13px;
+		}
+		ul,li{
+			list-style-type:none;
+			margin:0;
+			padding:0;
+		}
+		.menu{
+			width:190px;
+			border:1px solid red;
+			background-color:#fffdd2;
+		}
+		.optn{
+			width:190px;
+			line-height:28px;
+			border-top:1px dashed #ccc;
+		}
+		.content{
+			padding-top:10px;
+			clear:left;
+		}
+		a{
+			text-decoration:none;
+			color:#666;
+			padding:10px;
+		}
+		.div{
+			padding:10px;
+		}
+		.optnFocus{
+			background-color:#fff;
+			font-weight:bold;
+		}
+		span{
+			font-size:14px;
+			font-weight:bold;
+		}
+		.tip{
+			width:190px;
+			border:2px solid #ffa200;
+			position: absolute;
+			padding:10px;
+			background-color:#fff;
+			display:none;
+		}
+		.tip li{
+			line-height: 23px;
+		}
+		#sort{
+			position:absolute;
+			display:none;
+			color:#ffa200;
+		}
+		
+		/*.parent{
+			position:relative;
+		}*/
+
+	</style>
+</head>
+<body>
+	
+	<ul class="parent">
+		<li class="menu">
+			<div class="div">
+				<span>电脑数码类产品</span>
+			</div>
+			<ul class="content">
+				<li class="optn"><a href="#">笔记本</a></li>
+				<ul class="tip">
+					<li><a href="">笔记本1</a></li>
+					<li><a href="">笔记本2</a></li>
+					<li><a href="">笔记本3</a></li>
+					<li><a href="">笔记本4</a></li>
+					<li><a href="">笔记本5</a></li>
+				</ul>
+				<li class="optn"><a href="#">移动硬盘</a></li>
+				<ul class="tip">
+					<li><a href="">移动硬盘1</a></li>
+					<li><a href="">移动硬盘2</a></li>
+					<li><a href="">移动硬盘3</a></li>
+					<li><a href="">移动硬盘4</a></li>
+					<li><a href="">移动硬盘5</a></li>
+				</ul>
+				<li class="optn"><a href="#">电脑软件</a></li>
+				<ul class="tip">
+					<li><a href="">电脑软件1</a></li>
+					<li><a href="">电脑软件2</a></li>
+					<li><a href="">电脑软件3</a></li>
+					<li><a href="">电脑软件4</a></li>
+					<li><a href="">电脑软件5</a></li>
+				</ul>
+				<li class="optn"><a href="#">数码产品</a></li>
+				<ul class="tip">
+					<li><a href="">数码产品1</a></li>
+					<li><a href="">数码产品2</a></li>
+					<li><a href="">数码产品3</a></li>
+					<li><a href="">数码产品4</a></li>
+					<li><a href="">数码产品5</a></li>
+				</ul>
+			</ul>
+			<span id="sort">&lt;</span>
+		</li>
+	</ul>
+  
+	<script type="text/javascript">
+		$(function(){
+			var curY,curH,curW,srtY,srtX,objL;
+
+			function setInitValue(obj){
+				curY = obj.offset().top;
+				curH = obj.height();
+				curW = obj.width();
+				srtY = curY + (curH/2) + "px";
+				srtX = curW - 5 +"px";
+			}
+			$(".optn").mouseover(function(){
+				objL = $(this);
+				setInitValue(objL);
+				var allY = curY - curH +"px";
+				objL.addClass("optnFocus");
+				objL.next("ul").show().css({
+					"top":allY,
+					"left":curW
+				});
+				$("#sort").show().css({
+					"top":srtY,
+					"left":srtX	
+				});
+			}).mouseout(function(){
+				$(this).removeClass("optnFocus");
+				$(this).next("ul").hide();
+				$("#sort").hide();
+			});
+
+			$(".tip").mousemove(function(){
+				$(this).show();
+				objL = $(this).prev("li");
+				setInitValue(objL);
+				objL.addClass("optnFocus");
+				$("#sort").show().css({
+					"top":srtY,
+					"left":srtX	
+				});
+			}).mouseout(function(){
+				$(this).hide();
+				$(this).prev("li").removeClass("optnFocus");
+				$("#sort").hide();
+			})	
+
+
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选择器</title>
+	<style type="text/css">
+		h2+p{
+			color:red;
+		}
+		h2~p{
+			font-size: 30px;
+		}
+		[data-hah="a"]{
+			border:2px dotted blue;
+		}
+		ul li:last-child{
+			color:red;
+		}
+		ul li:only-child{
+			color:blue;
+		}
+		ul li:first-child{
+			color:gray;
+		}
+		ul li:nth-child(2){
+			color:yellow;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="huanghelou" data-hah="a">
+		<h1>黄鹤楼</h1>
+		<p>黄鹤楼始建于三国时代吴黄武二年（公元223年）。唐代诗人崔颢在此题下《黄鹤楼》一诗，李白在此写下《黄鹤楼送孟浩然之广陵》，历代文人墨客在此留下了许多千古绝唱，使得黄鹤楼自古以来闻名遐迩。</p>
+		<p>黄鹤楼位于湖北省武汉市长江南岸的武昌蛇山之巅，为国家5A级旅游景区，享有“天下江山第一楼“、”天下绝景“之称。黄鹤楼是武汉市标志性建筑，与晴川阁、古琴台并称“武汉三大名胜”。该建筑也与湖南岳阳楼、江西南昌滕王阁并称为“江南三大名楼”。</p>
+		<h2>黄鹤楼送孟浩然之广陵</h2>
+		<p>故人西辞黄鹤楼⑵，烟花三月下扬州⑶。</p>
+		<p>孤帆远影碧空尽⑷，唯见长江天际流⑸。</p>
+	</div>
+	<div class="list">
+		<ul>
+			<li>item1</li>
+			<li>item2</li>
+			<li>item3</li>
+			<li>item4</li>
+			<li>item5</li>
+			<li>item6</li>
+			<li>item7</li>
+			<li>item8</li>
+		</ul>
+		<ul>
+			<li>item1</li>
+			<li>item2</li>
+			<li>item3</li>
+			<li>item4</li>
+			<li>item5</li>
+			
+		</ul>
+		<ul>
+			<li>item1</li>
+			
+		</ul>
+		<ul>
+			<li>item1</li>
+			<li>item2</li>
+			<li>item3</li>
+			<li>item4</li>
+			<li>item5</li>
+			<li>item6</li>
+			<li>item7</li>
+			<li>item8</li>
+		</ul>
+	</div>
+</body>
+</html>

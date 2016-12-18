@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html ang="zh-cn">
+<head>
+<meta charset="utf-8">
+<title> 事件处理 </title>
+
+<style type="text/css">
+	*{
+		margin:0;
+		padding:0;
+	}
+	.div1{
+		width:800px;
+		height:500px;
+	}
+	#test{
+		width:800px;
+		height:800px;
+		background-color:red;
+	}
+</style>
+</head>
+<body >
+	<div class="div1">
+		<form method="get" id="form1">
+			<input type="button" name="btn" id="btn1" value="按钮1">
+			<input type="button" name="btn" id="btn2" value="按钮2">
+			<input type="button" name="btn" id="btn3" value="按钮3">
+			<select >
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+			</select>
+			<textarea ></textarea>
+		</form>
+	</div>	
+	<div id="test">
+		
+	</div>
+
+<script type="text/javascript">
+var EventUtil = {
+	addHandler:function(element,type,handler){
+		if(element.addEventListener){
+			element.addEventListener(type,handler,false);
+		}else if(element.attachEvent){
+			element.attachEvent("on"+type,handler);
+		}else{
+			element["on"+type] = handler;
+		}
+	},
+
+	removeHandler:function(element,type,handler){
+		if(element.removeEventListener){
+			element.removeEventListener(type,handler,false);
+		}else if(element.detachEvent){
+			element.detachEvent("on"+type,handler);
+		}else{
+			element["on"+type] = null;
+		}
+	},
+
+	getEvent:function(event){
+		return event?event:window.event;
+	},
+	getTarget:function(event){
+		return event.target || event.srcElement;
+	}, 
+	preventDefault:function(event){
+		if(event.preventDefault){
+			event.preventDefault();
+		}else{
+			event.returnValue = false;
+		}
+	},
+	stopPropagation:function(event){
+		if(event.stopPropagation){
+			event.stopPropagation();
+		}else{
+			event.cancelBubble = true;
+		}
+	},
+
+	getRelatedTarget:function(event){
+		if(event.relatedTarget){
+			return event.relatedTarget;
+		}else if(event.toElement){
+			return event.toElement;
+		}else if(event.fromElement){
+			return event.fromtElement;
+		}else{
+			return null;
+		}
+	}
+
+};
+//以上是跨浏览器处理（ie8）；
+
+var div=document.getElementById("test");
+var aa = function(e){
+	// var pageHeight = document.documentElement.scrollTop;
+	// console.log(e.clientY);
+	// console.log(e.pageY);
+	e=EventUtil.getEvent(e);
+	EventUtil.preventDefault(e);
+	console.log(e);
+	// var b = EventUtil.getRelatedTarget(e);
+	// console.log(b);
+};
+var wr = function(e){
+	// var str = form.value.substring(form.selectionStart,form.selecttionEnd);
+	var str = form.setSelectionRange(0,3);
+	console.log(str);
+};
+
+EventUtil.addHandler(div,"contextmenu",aa);
+var event = document.createEvent("MouseEvents");
+event.initMouseEvent("click",true,true,document.defaultView,0,0,0,0,0,false,false,false,false,0,null);
+// EventUtil.addHandler(div,"click",aa);
+div.dispatchEvent(event);
+// div["on"+"click"]=function(){
+// 	alert("sos");
+// };
+var form = document.getElementById("form1").elements[4];
+console.log(form);
+form.setSelectionRange(0,4);
+EventUtil.addHandler(div,"click",wr);
+var c = function(){
+	try{
+		return 3;
+	}catch(error){
+		return 4;
+	}finally{
+		return 9;
+	}
+};
+console.log(c());
+
+
+
+</script>
+</body>
+</html>

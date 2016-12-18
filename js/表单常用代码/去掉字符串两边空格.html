@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>去掉字符串两边空格</title>
+</head>
+<body>
+	<h2>测试去掉字符串两边空格</h2>
+	<input type="text" name="" id="str">
+	<input type="button" id="btn" value="过滤">
+	<div id="bef">您输入的字符串长度为：</div>
+	<div id="aft">您过滤后的字符串长度为：</div>
+	
+	<script type="text/javascript">
+		var _btn = document.getElementById("btn"),
+			_str = document.getElementById("str"),
+			_bef = document.getElementById("bef"),
+			_aft = document.getElementById("aft"),
+			_sp1 = document.createTextNode(""),
+			_sp2 = document.createTextNode("");
+			_bef.appendChild(_sp1);	
+			_aft.appendChild(_sp2);
+		_btn.onclick=function(){
+			var lv = _str.value;
+			_sp1.nodeValue=lv.length;
+			
+			// \s : 任意空白符;   
+			// \u00A0 : ascii码中的空白符  
+			// ^ : 字符串的开始  
+			// $ : 字符串的结束  
+			// /g : 全局匹配. 因为一个正则表达式只能进行一次匹配	
+			//lv = lv.replace(/^(\s|u00A0)+|(\s|u00A0)+$/g,"");
+			lv = lv.replace(/^\s+|\s+$/g,"");
+            // lv = lv.trim();
+            if(lv.length == 0){
+            	_sp2.nodeValue = "您的输入为空";
+            }else{
+            	_sp2.nodeValue = lv.length
+            }
+			
+			
+
+		}
+
+	</script>
+</body>
+</html>

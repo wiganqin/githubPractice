@@ -1,7 +1,7 @@
 window.onload=function(){
 	imgLocation("container","box");	
 	//模拟实现加载的数据。
-	var imgData = {"data":[{"src":"02.gif"},{"src":"01.gif"},{"src":"05.jpg"},{"src":"09.gif"},{"src":"11.jpg"}]}
+	var imgData = {"data":[{"src":"02.jpg"},{"src":"01.jpg"},{"src":"05.jpg"},{"src":"13.jpg"},{"src":"11.jpg"},{"src":"12.jpg"}]}
 	//监听滚动条
 	window.onscroll = function(){
 		if(checkFlag()){
@@ -29,7 +29,7 @@ function checkFlag(){
 	var lastContentHeight = ccontent[ccontent.length-1].offsetTop;
 	//console.log(lastContentHeight);
 	var scrollTop = document.documentElement.scrollTop||document.body.scrollTop;
-	var pageHeight = document.documentElement.clientHeight||dcument.body.clientHeight;
+	var pageHeight = document.documentElement.clientHeight||document.body.clientHeight;
 	if(lastContentHeight<scrollTop+pageHeight){
 		return true;
 	}

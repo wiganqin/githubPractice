@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>全屏插件测试</title>
+		<script src="../jquery/jquery-3.1.0.min.js"></script>
+	<script src="jquery.fullPage.js"></script>
+
+	<style type="text/css">
+		
+	div{
+		/*width:500px;
+		height:1000px;*/
+		border:2px dotted red;
+	}
+	#myMenu {
+		position:fixed;
+		
+		
+		z-index: 999;
+		
+	}
+	#myMenu li{
+		/*float:right;*/
+	}
+	</style>
+</head>
+<body>
+	   <ul id="myMenu">
+            <li data-menuanchor="firstPage" class="active"><a href="#firstPage">First section</a></li>
+            <li data-menuanchor="secondPage"><a href="#secondPage">Second section</a></li>
+            <li data-menuanchor="thirdPage"><a href="#3">Third section</a></li>
+            <li data-menuanchor="fourthPage"><a href="#4">Fourth section</a></li>
+        </ul>    
+	<div id="fullpage">
+    <div class="section">第一屏
+		    
+
+    </div>
+
+    <div class="section">第二屏</div>
+    <div class="section">
+       第三屏
+       <!--  <div class="slide">第三屏的第一屏</div>
+        <div class="slide">第三屏的第二屏</div>
+        <div class="slide">第三屏的第三屏</div>
+        <div class="slide">第三屏的第四屏</div> -->
+    </div>
+    <div class="section">第四屏</div>
+</div>
+	<script>
+    $(document).ready(function() {
+        $('#fullpage').fullpage({
+            sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
+            anchors: ['firstPage', 'secondPage', '3', '4'],
+            menu: '#menu',
+            css3: true,
+            scrollingSpeed: 1000,
+            'navigation': true,
+		'navigationPosition': 'right',
+		'navigationTooltips': ['fullPage.js', 'Powerful', 'Amazing', 'Simple'],
+		'scrollOverflow': true,
+        });
+
+        $('#showExamples').click(function(e){
+            e.stopPropagation();
+            e.preventDefault();
+            $('#examplesList').toggle();
+        });
+
+        $('html').click(function(){
+            $('#examplesList').hide();
+        });
+    });
+    </script>
+</body>
+</html>

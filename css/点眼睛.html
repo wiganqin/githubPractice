@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>点眼睛啊</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		div{
+			border:1px solid red;
+		}
+		.parent{
+			position:relative;
+			width:100%;
+			float:left;
+		} 
+		.son{
+			display:block;
+			width:5%;
+			height:5%;
+			position:absolute;
+			z-index:999;
+			/*border:1px solid red;*/
+		}
+		#test{
+			left:49%;
+			top:26%;
+
+		}
+		.parent >a:last-child{
+			left:63%;
+			top:26%;
+
+		}
+		
+		.parent img{
+			float:left;
+			width:100%;
+		}
+	</style>
+</head>
+<body>
+	<div class="parent">
+		<img src="images/shizi.jpg" alt="">
+		<a href="http://mediaqueri.es/" class="son" id="test"></a>
+		<a href="http://www.uisdc.com/" class="son"></a>
+	</div>
+</body>
+</html>

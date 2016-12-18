@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style type="text/css">
+	
+	  .parent {
+	    height: 100%;
+	    /*用于隐藏滚动条*/
+	    overflow: hidden;
+	  }
+	  div{
+	  	border:1px solid red;
+	  }
+	  .top {
+	     /*相对于 body 定位*/
+	     position: absolute;
+	     top: 0;
+	     left: 0;
+	     right: 0;
+	     height: 100px;
+	   }
+	   .left {
+	     position: absolute;
+	     left: 0;
+	     top: 100px;
+	     bottom: 50px;
+	     width: 200px;
+	   }
+	   .right {
+	     position: absolute;
+	     left: 200px;
+	     right: 0;
+	     top: 100px;
+	     bottom: 50px;
+	     overflow: scroll;
+	   }
+	   .right .inner {
+	     /*此样式为演示所有*/
+	     min-height: 1000px;
+	   }
+	   .bottom {
+	     position: absolute;
+	     left: 0;
+	     right: 0;
+	     bottom: 0;
+	     height: 50px;
+	   }
+</style>
+<body>
+	<div class="parent">
+	  <div class="top">top</div>
+	  <div class="left">left</div>
+	  <div class="right">
+	   right
+	    <div class="inner">inner</div>
+	  </div>
+	  <div class="bottom">bottom</div>
+	</div>
+</body>
+</html>
